@@ -5,36 +5,41 @@
       <div class="c-card u-text--centered">
         <div class="c-card__content u-padding--none u-border--none">
           <div class="c-card__header u-border--bottom">
-            <!----><img alt="" class="u-image u-image--150 u-image--rounded"
-              src="https://randomuser.me/api/portraits/women/20.jpg" />
+            <img *ngIf="userDetails?.picture?.large" alt="" class="u-image u-image--150 u-image--rounded"
+              [src]="userDetails.picture.large" />
           </div>
-          <!---->
           <div>
-            <h3 class="c-card__subtitle u-margin--none">Hi, My {{userInfo.type }}  is</h3>
-            <!---->
+            <h3 class="c-card__subtitle u-margin--none">Hi, My {{userInfo.type }} is</h3>
             <h2 class="c-card__title u-text--lg" *ngIf="userInfo.type !== 'birthday'">{{ userInfo.value }}</h2>
-            <h2 class="c-card__title u-text--lg" *ngIf="userInfo.type === 'birthday'">{{ userInfo.value  | date: 'd/MM/yyyy'}}</h2>
+            <h2 class="c-card__title u-text--lg" *ngIf="userInfo.type === 'birthday'">{{ userInfo.value | date:
+              'd/MM/yyyy'}}</h2>
           </div>
 
           <ul class="c-tabs l-row u-grid-justify--center u-padding--md">
             <li class="c-tabs__list " [class.active]="userInfo.type === 'name'">
-              <a (mouseover)="setValue({value: userDetails.name.first + ' ' + userDetails.name.last, type: 'name'})" class="c-tabs__link u-padding--sm"><img class="u-image--24" src="./assets/svg/misc/user.svg" /></a>
+              <a (mouseover)="setValue({value: userDetails.name.first + ' ' + userDetails.name.last, type: 'name'})"
+                class="c-tabs__link u-padding--sm"><img class="u-image--24" src="./assets/svg/misc/user.svg" /></a>
             </li>
-            <li class="c-tabs__list"  [class.active]="userInfo.type === 'email'">
-              <a (mouseover)="setValue({value: userDetails.email, type: 'email'})" class="c-tabs__link u-padding--sm"><img class="u-image--24" src="./assets/svg/misc/email.svg" /></a>
+            <li class="c-tabs__list" [class.active]="userInfo.type === 'email'">
+              <a (mouseover)="setValue({value: userDetails.email, type: 'email'})"
+                class="c-tabs__link u-padding--sm"><img class="u-image--24" src="./assets/svg/misc/email.svg" /></a>
             </li>
-     <li class="c-tabs__list">
-              <a (mouseover)="setValue({value: userDetails.dob.date, type: 'birthday'})" class="c-tabs__link u-padding--sm"><img class="u-image--24" src="./assets/svg/misc/calendar.svg" /></a>
+            <li class="c-tabs__list">
+              <a (mouseover)="setValue({value: userDetails.dob.date, type: 'birthday'})"
+                class="c-tabs__link u-padding--sm"><img class="u-image--24" src="./assets/svg/misc/calendar.svg" /></a>
             </li>
             <li class="c-tabs__list" [class.active]="userInfo.type === 'address'">
-              <a (mouseover)="setValue({value: userDetails.location.street.number + ' ' + userDetails.location.street.name,type: 'address'})" class="c-tabs__link u-padding--sm"><img class="u-image--24"
+              <a (mouseover)="setValue({value: userDetails.location.street.number + ' ' + userDetails.location.street.name,type: 'address'})"
+                class="c-tabs__link u-padding--sm"><img class="u-image--24"
                   src="./assets/svg/misc/map-location.svg" /></a>
             </li>
             <li class="c-tabs__list">
-              <a (mouseover)="setValue({value: userDetails.phone, type:'phone'})" class="c-tabs__link u-padding--sm"><img class="u-image--24" src="./assets/svg/misc/call.svg" /></a>
+              <a (mouseover)="setValue({value: userDetails.phone, type:'phone'})"
+                class="c-tabs__link u-padding--sm"><img class="u-image--24" src="./assets/svg/misc/call.svg" /></a>
             </li>
             <li class="c-tabs__list">
-              <a (mouseover)="setValue({value:userDetails.login.password, type:'password'})" class="c-tabs__link u-padding--sm"><img class="u-image--24" src="./assets/svg/misc/locked.svg" /></a>
+              <a (mouseover)="setValue({value:userDetails.login.password, type:'password'})"
+                class="c-tabs__link u-padding--sm"><img class="u-image--24" src="./assets/svg/misc/locked.svg" /></a>
             </li>
           </ul>
         </div>
