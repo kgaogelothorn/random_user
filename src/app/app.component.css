@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body{
+  font-family: 'Ubuntu', sans-serif !important;
+  height: auto;
+}
+.header {
+  height: 300px;
+  background: #2c2e31;
+  margin-bottom: -150px;
+}
+.c-card {
+  border-radius: 5px;
+  border: none !important;
+  box-shadow: 0 0 2.5px rgb(0 0 0 / 50%);
+  font-family: 'Ubuntu', sans-serif !important;
+  overflow: hidden;
+  text-align: center;
+  z-index: 5;
+}
+.c-card__header {
+  padding: .95rem;
+  background:  #f9f9f9;
+  height: 85px;
+  margin-bottom: 75px;
+}
+.u-image--rounded {
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid rgba(0,0,0,.25);
+  padding: 4px;
+}
+.u-content--center {
+  max-width: 720px;
+}
+
+.c-tabs__list {
+  border-radius: 50px;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
+}
+.lds-dual-ring {
+  display: inline-block;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #2c2e31;
+  border-color: #2c2e31 transparent #2c2e31 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width:500px) {
+  .header {display: none;
+  }
+  .c-card {
+    box-shadow: none;
+  }
+
+}
+
